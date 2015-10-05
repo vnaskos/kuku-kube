@@ -5,6 +5,9 @@ This bot was designed for [kuku kube](http://kuku-kube.com), for any other versi
 ## Compile
 gcc -Wall kuku-bot.c -lX11 -lXtst -o kuku-bot
 
+## Showcase
+[youtube video](https://www.youtube.com/watch?v=Yp1kWO3cJL8)
+
 ## Warning
 This c bot takes control of your pointer for a minute.
 
