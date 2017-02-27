@@ -1,26 +1,25 @@
-/* gcc -Wall bot.c -lX11 -lXtst -o bot */
+/**
+ * Kuku-kube bot to achive high scores.
+ * It's specially designed for kuku-kube.com,
+ * for any other version it might need some changes.
+ * Built and tested on Ubuntu 12.04 x64
+ *
+ * gcc -Wall bot.c -lX11 -lXtst -o bot 
+ *
+ * author: Vasilis Naskos 
+ * https://github.com/vnaskos
+ * designed for: kuku-kube.com
+ */
 
-/* 
-    Kuku-kube bot to achive high scores.
-    It's specially designed for kuku-kube.com,
-    for any other version it might need some changes.
-    Built and tested on Ubuntu 12.04 x64
-    
-    author: Vasilis Naskos 
-    https://github.com/vnaskos
-    designed for: kuku-kube.com
-*/
-
-
-//=========SETTINGS===============
-#define START_X 413					//x coordinate of the game's top left corner on the screen
-#define START_Y 206					//y left top
-#define END_X 917					//x coordinate of the game's bottom right corner on the screen 
-#define END_Y 706					//y bottom right
-#define START_DELAY 3000000			//Delay brfore the bot begin
-#define FIRST_LEVELS_DELAY 46500	//Delay after click for levels 1-17
-#define CLICK_DELAY 42000			//Delay after click for levels > 17
-//================================
+/*=========SETTINGS===============*/
+#define START_X 413                 //x top left corner
+#define START_Y 206                 //y left top
+#define END_X 917                   //x bottom right corner
+#define END_Y 706                   //y bottom right
+#define START_DELAY 3000000         //Delay brfore the bot begins
+#define FIRST_LEVELS_DELAY 46500    //Delay after click for levels 1-17
+#define CLICK_DELAY 42000           //Delay after click for levels > 17
+/*================================*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -149,13 +148,13 @@ int main(int argc, char *argv[])
 		
 		score++;
 		if(score <= 17) {
-		    adjustStep();
-		    usleep(FIRST_LEVELS_DELAY);
+			adjustStep();
+			usleep(FIRST_LEVELS_DELAY);
 		} else {
 			usleep(CLICK_DELAY);
 		}
 		
-    }
+	}
 	
 	XFlush(dpy);
 	XCloseDisplay(dpy);
